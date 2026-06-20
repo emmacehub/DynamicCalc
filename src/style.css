@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0f10);
+  font-family: -apple-system, BlinkMacSystemFont, Arial;
+  transition: 0.3s ease;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #f5f5f7;
+}
+
+.app {
+  width: 340px;
+  background: rgba(30, 30, 45, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  transition: 0.3s ease;
+}
+
+body.light .app {
+  background: black;
+}
+
+/* TOP BAR */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+}
+
+body.light h2 {
+  color: #111;
+}
+
+.menuBtn {
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* DISPLAY */
+#display {
+  width: 100%;
+  height: 75px;
+  font-size: 34px;
+  text-align: right;
+  padding: 12px;
+  border: none;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+}
+
+body.light #display {
+  background: #f0f0f0;
+  color: #111;
+}
+
+/* BUTTON GRID */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* BASE BUTTON */
+button {
+  height: 68px;
+  font-size: 18px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  transition: 0.15s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* CLICK EFFECT (PRO FEEL) */
+button:active {
+  transform: scale(0.92);
+  background: #ff6a00 !important;
+  color: white;
+}
+
+/* HOVER */
+button:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* OPERATORS */
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16),
+button:nth-child(19) {
+  background: rgba(255, 159, 10, 0.9);
+  color: black;
+  font-weight: bold;
+}
+
+/* ZERO */
+.zero {
+  grid-column: span 2;
+}
+
+/* DYNAMIC BUTTON */
+.dynamicBtn {
+  background: linear-gradient(135deg, #ff2d55, #ff5e3a);
+  font-weight: bold;
+}
+
+/* SIDE MENU */
+.sideMenu {
+  position: absolute;
+  top: 0;
+  right: -270px;
+  width: 230px;
+  height: 100%;
+  background: #111;
+  padding: 15px;
+  transition: 0.3s ease;
+  border-radius: 20px 0 0 20px;
+  overflow-y: auto;
+}
+
+.sideMenu.active {
+  right: 0;
+}
+
+.sideMenu button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  transition: transform 0.0001s ease, background 0.00s ease;
+}
+
+button:active {
+  transform: scale(0.000);
+}
